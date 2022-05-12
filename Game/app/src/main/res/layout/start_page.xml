@@ -13,7 +13,7 @@
         android:layout_marginStart="70dp"
         android:layout_marginTop="70dp"
         android:layout_marginEnd="70dp"
-        android:background="@drawable/rect_rounded_button"
+        android:background="@drawable/di_rect_rounded_text"
         android:backgroundTint="#EC275F"
         android:onClick="LogIN"
         android:padding="15dp"
@@ -39,14 +39,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo2" />
+        app:srcCompat="@drawable/logo_start_page" />
 
     <Button
         android:id="@+id/SignIn_btn"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="36dp"
-        android:background="@drawable/rect_rounded_button"
+        android:background="@drawable/di_rect_rounded_text"
         android:backgroundTint="#EC275F"
         android:onClick="SignIN"
         android:padding="15dp"
@@ -68,7 +68,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.222"
-        app:srcCompat="@drawable/ic_ellipse_1" />
+        app:srcCompat="@drawable/di_ellipse_1" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -83,7 +83,7 @@
         app:layout_constraintStart_toEndOf="@+id/Logo"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_ellipse_2" />
+        app:srcCompat="@drawable/di_ellipse_2" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -92,7 +92,7 @@
         android:layout_marginBottom="-25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_ellipse_3" />
+        app:srcCompat="@drawable/di_ellipse_3" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -106,6 +106,6 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/SignIn_btn"
-        app:srcCompat="@drawable/ic_ellipse_4" />
+        app:srcCompat="@drawable/di_ellipse_4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

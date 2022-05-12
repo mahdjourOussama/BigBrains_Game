@@ -28,6 +28,10 @@
             android:exported="true">
         </activity>
         <activity
+            android:name=".Matching_Game"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".Music_Game"
             android:exported="true">
             <intent-filter>

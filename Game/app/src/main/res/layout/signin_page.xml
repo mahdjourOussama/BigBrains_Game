@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_ellipse_4" />
+        app:srcCompat="@drawable/di_ellipse_4" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.32999998"
-        app:srcCompat="@drawable/ic_ellipse_2" />
+        app:srcCompat="@drawable/di_ellipse_2" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -38,7 +38,7 @@
         android:layout_marginTop="164dp"
         app:layout_constraintStart_toEndOf="@+id/imageView7"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:srcCompat="@drawable/ic_ellipse_4" />
+        app:srcCompat="@drawable/di_ellipse_4" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -48,7 +48,7 @@
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_ellipse_3" />
+        app:srcCompat="@drawable/di_ellipse_3" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -58,7 +58,7 @@
         android:layout_marginTop="-5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_ellipse_1" />
+        app:srcCompat="@drawable/di_ellipse_1" />
 
     <TextView
         android:id="@+id/textView"
@@ -80,7 +80,7 @@
         android:id="@+id/Username_txt"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:background="@drawable/rect_rounded_button"
+        android:background="@drawable/di_rect_rounded_text"
         android:ems="10"
         android:inputType="textPersonName"
         android:padding="10dp"
@@ -96,7 +96,7 @@
         android:layout_width="375dp"
         android:layout_height="50dp"
         android:layout_marginTop="60dp"
-        android:background="@drawable/rect_rounded_button"
+        android:background="@drawable/di_rect_rounded_text"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:padding="10dp"
@@ -108,7 +108,7 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="60dp"
-        android:background="@drawable/rect_rounded_button"
+        android:background="@drawable/di_rect_rounded_text"
         android:ems="10"
         android:inputType="textPassword"
         android:padding="10dp"
@@ -120,7 +120,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:background="@drawable/rect_rounded_button"
+        android:background="@drawable/di_rect_rounded_text"
         android:backgroundTint="#D4E0EE"
         android:backgroundTintMode="src_atop"
         android:text="Sign IN"
