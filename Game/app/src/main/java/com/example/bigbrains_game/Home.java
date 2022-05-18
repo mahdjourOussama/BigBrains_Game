@@ -17,20 +17,20 @@ public class Home extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.home_page);
     }
-    public void Play_Music_Game(View v){
-        Intent i = new Intent(this,Music_Game.class);
+    public void Play_Pattern_Game(View v){
+        Intent i = new Intent(this, Pattern_Game.class);
         startActivity(i);
     }
     public void Play_Card_Game(View v){
-        Intent i = new Intent(this,Music_Game.class);
+        Intent i = new Intent(this, Pattern_Game.class);
         startActivity(i);
     }
-    public void Play_3_Game(View v){
-        Intent i = new Intent(this,Music_Game.class);
+    public void Play_Cup_Game(View v){
+        Intent i = new Intent(this, Pattern_Game.class);
         startActivity(i);
     }
     public void Play_4_Game(View v){
-        Intent i = new Intent(this,Music_Game.class);
+        Intent i = new Intent(this, Pattern_Game.class);
         startActivity(i);
     }
     public void Exit(View v){
