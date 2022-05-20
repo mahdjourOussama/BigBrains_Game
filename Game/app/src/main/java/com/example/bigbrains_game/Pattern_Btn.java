@@ -2,16 +2,16 @@ package com.example.bigbrains_game;
 
 import android.widget.Button;
 
-public class PattrenBtn {
+public class Pattern_Btn {
 
     private int ID, ColorID =0;
     private Button BtnID;
-    public PattrenBtn(int ID, int Color, Button btnID){
+    public Pattern_Btn(int ID, int Color, Button btnID){
         this.ColorID =Color;
         this.ID=ID;
         this.BtnID=btnID;
     }
-    public PattrenBtn(int ID, Button btnID){
+    public Pattern_Btn(int ID, Button btnID){
         this.ID=ID;
         this.BtnID=btnID;
     }

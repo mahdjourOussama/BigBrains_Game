@@ -3,16 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/di_background">
 
     <TextView
         android:id="@+id/player_Name_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="275dp"
+        android:layout_height="60dp"
         android:background="@drawable/di_player_name_menu"
+        android:gravity="center"
         android:text="Player Name"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,6 +27,7 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="80dp"
+        android:background="@drawable/di_play_pallet_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -290,12 +293,14 @@
 
     <ImageButton
         android:id="@+id/replay_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/di_rect_rounded_button"
         android:onClick="restartGame"
         app:layout_constraintBottom_toBottomOf="@+id/player_Name_txt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toEndOf="@+id/player_Name_txt"
         app:layout_constraintTop_toTopOf="@+id/player_Name_txt"
         app:srcCompat="@drawable/ic_add" />
@@ -316,6 +321,8 @@
         android:id="@+id/next_level_btn"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/di_rect_rounded_button"
         android:onClick="LevelUP"
         app:layout_constraintBottom_toBottomOf="@+id/level_txt"
         app:layout_constraintStart_toEndOf="@+id/level_txt"
@@ -326,6 +333,8 @@
         android:id="@+id/past_level_btn"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/di_rect_rounded_button"
         android:onClick="LevelDOWN"
         app:layout_constraintBottom_toBottomOf="@+id/level_txt"
         app:layout_constraintEnd_toStartOf="@+id/level_txt"
@@ -334,10 +343,13 @@
 
     <ImageButton
         android:id="@+id/back_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/di_rect_rounded_button"
         app:layout_constraintBottom_toBottomOf="@+id/player_Name_txt"
         app:layout_constraintEnd_toStartOf="@+id/player_Name_txt"
+        app:layout_constraintHorizontal_bias="0.82"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/player_Name_txt"
         app:srcCompat="@drawable/ic_pause" />
@@ -346,6 +358,8 @@
         android:id="@+id/validate_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/di_rect_rounded_button"
         android:onClick="ValidateSequence"
         android:text="Validate"
         app:layout_constraintBottom_toTopOf="@+id/level_txt"

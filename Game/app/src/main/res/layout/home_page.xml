@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/di_background">
 
     <ImageButton
         android:id="@+id/imageButton6"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:background="@drawable/di_rect_rounded_button"
         android:onClick="Play_Card_Game"
         app:layout_constraintBottom_toBottomOf="@+id/textView7"
         app:layout_constraintStart_toEndOf="@+id/textView7"
@@ -21,10 +23,13 @@
         android:layout_width="181dp"
         android:layout_height="75dp"
         android:layout_marginTop="75dp"
+        android:background="@drawable/di_rect_rounded_text"
+        android:gravity="center"
         android:onClick="Play_Cup_Game"
-        android:text="Game Name "
+        android:text="Find the Coin"
         android:textAlignment="center"
         android:textAllCaps="false"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +39,9 @@
         android:id="@+id/imageView11"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:background="@drawable/di_rect_rounded_button"
         android:onClick="Play_Pattern_Game"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@+id/music_game_name_txt"
         app:layout_constraintEnd_toStartOf="@+id/music_game_name_txt"
         app:layout_constraintTop_toTopOf="@+id/music_game_name_txt"
@@ -45,6 +52,7 @@
         android:id="@+id/usic_game_btn"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:background="@drawable/di_rect_rounded_button"
         android:onClick="Play_Pattern_Game"
         app:layout_constraintBottom_toBottomOf="@+id/music_game_name_txt"
         app:layout_constraintStart_toEndOf="@+id/music_game_name_txt"
@@ -56,6 +64,7 @@
         android:id="@+id/imageView13"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:background="@drawable/di_rect_rounded_button"
         android:onClick="Play_Card_Game"
         app:layout_constraintBottom_toBottomOf="@+id/textView7"
         app:layout_constraintEnd_toStartOf="@+id/textView7"
@@ -63,24 +72,11 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/logo_matching_game" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="181dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="96dp"
-        android:onClick="Play_4_Game"
-        android:text="Game Name "
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton2"
-        app:layout_constraintStart_toStartOf="@+id/imageView12"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
     <ImageView
         android:id="@+id/imageView12"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:background="@drawable/di_rect_rounded_button"
         android:onClick="Play_Cup_Game"
         app:layout_constraintBottom_toBottomOf="@+id/textView8"
         app:layout_constraintEnd_toStartOf="@+id/textView8"
@@ -93,10 +89,13 @@
         android:layout_width="181dp"
         android:layout_height="75dp"
         android:layout_marginTop="75dp"
+        android:background="@drawable/di_rect_rounded_text"
+        android:gravity="center"
         android:onClick="Play_Card_Game"
-        android:text="Game Name "
+        android:text="Match the Cards "
         android:textAlignment="center"
         android:textAllCaps="false"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/imageButton2"
         app:layout_constraintStart_toStartOf="@+id/imageView12"
@@ -106,6 +105,7 @@
         android:id="@+id/imageButton2"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:background="@drawable/di_rect_rounded_button"
         android:onClick="Play_Cup_Game"
         app:layout_constraintBottom_toBottomOf="@+id/textView8"
         app:layout_constraintStart_toEndOf="@+id/textView8"
@@ -113,77 +113,64 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_play_game" />
 
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:onClick="Play_4_Game"
-        app:layout_constraintBottom_toBottomOf="@+id/textView9"
-        app:layout_constraintEnd_toStartOf="@+id/textView7"
-        app:layout_constraintTop_toTopOf="@+id/textView7"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/logo_brain" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:onClick="Play_4_Game"
-        app:layout_constraintBottom_toBottomOf="@+id/textView9"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toTopOf="@+id/textView9"
-        app:srcCompat="@drawable/ic_play_game" />
-
     <TextView
         android:id="@+id/music_game_name_txt"
         android:layout_width="181dp"
         android:layout_height="75dp"
-        android:layout_marginTop="75dp"
-        android:layout_marginBottom="600dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="500dp"
+        android:background="@drawable/di_rect_rounded_text"
+        android:elegantTextHeight="false"
         android:onClick="Play_Pattern_Game"
-        android:text="Music Game"
+        android:text="Match the Pattern "
+        android:gravity="center"
         android:textAlignment="center"
         android:textAllCaps="false"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Player_Name_txt" />
+        app:layout_constraintTop_toBottomOf="@+id/Player_Name_txt"
+        app:layout_constraintVertical_bias="0.74" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group"
         android:layout_width="129dp"
         android:layout_height="13dp"
-        app:constraint_referenced_ids="music_game_name_txt,imageView10,imageButton3"
+        app:constraint_referenced_ids="music_game_name_txt"
         tools:layout_editor_absoluteX="40dp"
         tools:layout_editor_absoluteY="48dp" />
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/di_rect_rounded_button"
         android:onClick="Exit"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_close" />
 
     <ImageButton
         android:id="@+id/imageButton4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/di_rect_rounded_button"
         android:onClick="LogOut"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_logout" />
 
     <TextView
         android:id="@+id/Player_Name_txt"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/di_player_name_menu"
         android:text="Player Name"
+        android:gravity="center"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

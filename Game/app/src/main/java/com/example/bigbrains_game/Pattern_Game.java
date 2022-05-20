@@ -17,9 +17,9 @@ import java.util.List;
 
 public class Pattern_Game extends AppCompatActivity {
     //-----------------------Start Variable Declaration---------------------------------------------
-    public List <PattrenBtn> SequenceExpected = new ArrayList<PattrenBtn>() ,
-            SequenceEntered = new ArrayList<PattrenBtn>();
-    public double Score =0;
+    public List <Pattern_Btn> SequenceExpected = new ArrayList<Pattern_Btn>() ,
+            SequenceEntered = new ArrayList<Pattern_Btn>();
+    public int Score =0;
     public  int GameLevel =2;
     //-----------------------End Variable Declaration-----------------------------------------------
        @Override
@@ -54,9 +54,9 @@ public class Pattern_Game extends AppCompatActivity {
         return Integer.parseInt(((String) t.getText()).replace("Level ",""));
     }
 
-    public double GetScore(){
+    public int GetScore(){
         TextView t= (TextView) findViewById(R.id.Score_txt);
-        return Double.parseDouble((String) t.getText());
+        return Integer.parseInt((String) t.getText());
     }
 
     public int getID(String type,String name){
@@ -85,7 +85,7 @@ public class Pattern_Game extends AppCompatActivity {
         int randomNumber = (int) (Math.random()*24);
         int randomColor = (int)(Math.random()*5);
         boolean exist=false;
-        for (PattrenBtn i:
+        for (Pattern_Btn i:
                 SequenceExpected) {
             if (randomNumber==i.getID() && randomColor ==i.getColorID()) {
                 exist = true;
@@ -121,8 +121,8 @@ public class Pattern_Game extends AppCompatActivity {
 
     public void EnterSequence(View v){
         Button btn = (Button) findViewById(v.getId());
-        PattrenBtn Pbtn =SequenceEntered.get(0) ;
-        for (PattrenBtn b:
+        Pattern_Btn Pbtn =SequenceEntered.get(0) ;
+        for (Pattern_Btn b:
              SequenceEntered) {
             if(b.getBtn()==btn){
                 Pbtn= b;
@@ -157,13 +157,13 @@ public class Pattern_Game extends AppCompatActivity {
     }
 
     public void clearDisplay(){
-        for (PattrenBtn btn : SequenceExpected){
+        for (Pattern_Btn btn : SequenceExpected){
             btn.getBtn().setBackgroundResource(R.drawable.pattern_game_btn_0);
             btn.getBtn().setText("");
         }
     }
 
-    public void DisplayBtnColor(PattrenBtn BTN){
+    public void DisplayBtnColor(Pattern_Btn BTN){
         Button btn = BTN.getBtn();
         int colorID = getID("drawable","pattern_game_btn_"+BTN.getColorID());
         btn.setBackgroundResource(colorID);
@@ -212,25 +212,33 @@ public class Pattern_Game extends AppCompatActivity {
      }
 
      public void GameStatus(boolean status){
-         for (PattrenBtn btn :
+         for (Pattern_Btn btn :
                  SequenceExpected) {
              btn.getBtn().setEnabled(status);
          }
      }
+
      public void setUp(){
          SequenceExpected.clear();
          SequenceEntered.clear();
            for (int i=1;i<25;i++){
                int btnID = getID("id","button"+i);
-               PattrenBtn btn = new PattrenBtn(i,(Button) findViewById(btnID));
+               Pattern_Btn btn = new Pattern_Btn(i,(Button) findViewById(btnID));
                SequenceExpected.add(btn);
            }
          for (int i=1;i<25;i++){
              int btnID = getID("id","button"+i);
-             PattrenBtn btn = new PattrenBtn(i,(Button) findViewById(btnID));
+             Pattern_Btn btn = new Pattern_Btn(i,(Button) findViewById(btnID));
              SequenceEntered.add(btn);
          }
      }
+
+    public void reset(){
+        for (Pattern_Btn c :
+                SequenceExpected) {
+
+        }
+    }
 
     //-----------------------End Game Logic Methods-------------------------------------------------
 

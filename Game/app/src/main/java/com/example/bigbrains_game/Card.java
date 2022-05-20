@@ -1,22 +1,36 @@
 package com.example.bigbrains_game;
 
+import android.widget.Button;
+
 public class Card {
-    private int id,btnID,imageID;
+
+    //----------------- Variables ------------------------------------------------------------------
+    private int id, image,imageID;
+    private Button btnID;
     private Card twin;
+    private boolean cardHasTwin =false;
+    //----------------------------------------------------------------------------------------------
 
-    public Card(int id,int btnID,int imageID) {
+    //----------------- Constructor Methods---------------------------------------------------------
+
+    public Card(int id,Button btnID,int image,int imageID) {
         this.id = id;
         this.btnID=btnID;
+        this.image =image;
         this.imageID=imageID;
     }
 
-    public Card(int id,int btnID, int imageID ,Card twin) {
+    public Card(int id,Button btnID, int image ,int imageID,Card twin) {
         this.id = id;
         this.btnID=btnID;
-        this.imageID=imageID;
+        this.image =image;
         this.twin=twin;
+        this.imageID=imageID;
     }
 
+    //----------------------------------------------------------------------------------------------
+
+    //----------------- Getter Methods--------------------------------------------------------------
     public int getId() {
         return id;
     }
@@ -25,11 +39,27 @@ public class Card {
         return twin;
     }
 
-    public int getBtnID() {
+    public Button getBtnID() {
         return btnID;
     }
 
-    public void setBtnID(int id) {
+    public boolean checkTwin(Card twin){
+        if(this.twin==twin) return true;
+        else return false;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public int getImageID() {
+        return imageID;
+    }
+    //----------------------------------------------------------------------------------------------
+
+    //----------------- Setter Methods--------------------------------------------------------------
+
+    public void setBtnID(Button id) {
         this.btnID = id;
     }
 
@@ -37,13 +67,21 @@ public class Card {
         this.id = id;
     }
 
-    public void setTwin(Card twin) {
-        this.twin = twin;
-        twin.setTwin(this);
+    public void setImage(int image) {
+        this.image = image;
     }
 
-    public boolean checkTwin(Card twin){
-        if(this.twin==twin) return true;
-        else return false;
+    public void setTwin(Card twin) {
+        if (!cardHasTwin) {
+            cardHasTwin=true;
+            this.twin = twin;
+            twin.setTwin(this);
+        }
     }
+
+    public void setImageID(int imageID) {
+        this.imageID = imageID;
+    }
+
+    //----------------------------------------------------------------------------------------------
 }
