@@ -19,8 +19,7 @@ public class Pattern_Game extends AppCompatActivity {
     //-----------------------Start Variable Declaration---------------------------------------------
     public List <Pattern_Btn> SequenceExpected = new ArrayList<Pattern_Btn>() ,
             SequenceEntered = new ArrayList<Pattern_Btn>();
-    public int Score =0;
-    public  int GameLevel =2;
+    public int Score =0, GameLevel =2 ,Lives=3;
     //-----------------------End Variable Declaration-----------------------------------------------
        @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +41,11 @@ public class Pattern_Game extends AppCompatActivity {
         t.setText("Level "+GameLevel);
     }
 
+    public void updateLives(){
+        TextView t= (TextView) findViewById(R.id.lives_txt2);
+        t.setText("Lives : "+Lives);
+    }
+
     public void updateScore(){
         TextView t= (TextView) findViewById(R.id.Score_txt);
         t.setText(String.valueOf(Score));
@@ -52,6 +56,11 @@ public class Pattern_Game extends AppCompatActivity {
     public int GetLevel(){
         TextView t= (TextView) findViewById(R.id.level_txt);
         return Integer.parseInt(((String) t.getText()).replace("Level ",""));
+    }
+
+    public int GetLives(){
+        TextView t= (TextView) findViewById(R.id.lives_txt2);
+        return Integer.parseInt(((String) t.getText()).replace("Lives : ",""));
     }
 
     public int GetScore(){
@@ -66,6 +75,9 @@ public class Pattern_Game extends AppCompatActivity {
 
     //-----------------------Start Game Logic Methods-----------------------------------------------
 
+    public  void GameOver(){
+        GameStatus(false);
+    }
 
     public void LevelUP(View v){
         GameLevel= GetLevel()+1;
@@ -102,8 +114,16 @@ public class Pattern_Game extends AppCompatActivity {
         for (int i = 0; i< SequenceEntered.size(); i++){
             if(SequenceExpected.get(i).getBtn() ==SequenceEntered.get(i).getBtn()
                 && SequenceExpected.get(i).getColorID() != SequenceEntered.get(i).getColorID()) {
+
                 SequenceEntered.get(i).getBtn().setBackgroundResource(R.drawable.pattern_game_btn_error);
                 SequenceEntered.get(i).getBtn().setText("Error");
+                if(Lives <1){
+                    GameOver();
+                    return true;
+                }else{
+                    Lives=GetLives()-1;
+                    updateLives();
+                }
                 new android.os.Handler(Looper.getMainLooper()).postDelayed(
                         new Runnable() {
                             public void run() {
@@ -151,6 +171,8 @@ public class Pattern_Game extends AppCompatActivity {
 
     public void restartGame (View v){
         clearDisplay();
+        Score=0;
+        Lives=3;
         setUp();
         GameStatus(true);
         CreateSequence();
@@ -221,6 +243,9 @@ public class Pattern_Game extends AppCompatActivity {
      public void setUp(){
          SequenceExpected.clear();
          SequenceEntered.clear();
+         updateLives();
+         updateLevel();
+         updateScore();
            for (int i=1;i<25;i++){
                int btnID = getID("id","button"+i);
                Pattern_Btn btn = new Pattern_Btn(i,(Button) findViewById(btnID));
@@ -232,13 +257,6 @@ public class Pattern_Game extends AppCompatActivity {
              SequenceEntered.add(btn);
          }
      }
-
-    public void reset(){
-        for (Pattern_Btn c :
-                SequenceExpected) {
-
-        }
-    }
 
     //-----------------------End Game Logic Methods-------------------------------------------------
 

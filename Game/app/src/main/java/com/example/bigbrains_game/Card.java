@@ -8,7 +8,8 @@ public class Card {
     private int id, image,imageID;
     private Button btnID;
     private Card twin;
-    private boolean cardHasTwin =false;
+    private boolean cardHasTwin =false,
+            active=false;
     //----------------------------------------------------------------------------------------------
 
     //----------------- Constructor Methods---------------------------------------------------------
@@ -48,6 +49,10 @@ public class Card {
         else return false;
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
     public int getImage() {
         return image;
     }
@@ -81,6 +86,10 @@ public class Card {
 
     public void setImageID(int imageID) {
         this.imageID = imageID;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     //----------------------------------------------------------------------------------------------

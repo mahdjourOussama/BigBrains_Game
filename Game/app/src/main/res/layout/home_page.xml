@@ -10,6 +10,7 @@
         android:id="@+id/imageButton6"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:layout_marginStart="5dp"
         android:background="@drawable/di_rect_rounded_button"
         android:onClick="Play_Card_Game"
         app:layout_constraintBottom_toBottomOf="@+id/textView7"
@@ -20,7 +21,7 @@
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="181dp"
+        android:layout_width="0dp"
         android:layout_height="75dp"
         android:layout_marginTop="75dp"
         android:background="@drawable/di_rect_rounded_text"
@@ -31,17 +32,18 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/music_game_name_txt"
+        app:layout_constraintStart_toStartOf="@+id/music_game_name_txt"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <ImageView
         android:id="@+id/imageView11"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:layout_marginEnd="5dp"
         android:background="@drawable/di_rect_rounded_button"
-        android:onClick="Play_Pattern_Game"
         android:gravity="center"
+        android:onClick="Play_Pattern_Game"
         app:layout_constraintBottom_toBottomOf="@+id/music_game_name_txt"
         app:layout_constraintEnd_toStartOf="@+id/music_game_name_txt"
         app:layout_constraintTop_toTopOf="@+id/music_game_name_txt"
@@ -52,6 +54,7 @@
         android:id="@+id/usic_game_btn"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:layout_marginStart="5dp"
         android:background="@drawable/di_rect_rounded_button"
         android:onClick="Play_Pattern_Game"
         app:layout_constraintBottom_toBottomOf="@+id/music_game_name_txt"
@@ -64,6 +67,7 @@
         android:id="@+id/imageView13"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:layout_marginEnd="5dp"
         android:background="@drawable/di_rect_rounded_button"
         android:onClick="Play_Card_Game"
         app:layout_constraintBottom_toBottomOf="@+id/textView7"
@@ -76,6 +80,7 @@
         android:id="@+id/imageView12"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:layout_marginEnd="5dp"
         android:background="@drawable/di_rect_rounded_button"
         android:onClick="Play_Cup_Game"
         app:layout_constraintBottom_toBottomOf="@+id/textView8"
@@ -86,7 +91,7 @@
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="181dp"
+        android:layout_width="0dp"
         android:layout_height="75dp"
         android:layout_marginTop="75dp"
         android:background="@drawable/di_rect_rounded_text"
@@ -97,14 +102,15 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton2"
-        app:layout_constraintStart_toStartOf="@+id/imageView12"
+        app:layout_constraintEnd_toEndOf="@+id/textView8"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/music_game_name_txt" />
 
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:layout_marginStart="5dp"
         android:background="@drawable/di_rect_rounded_button"
         android:onClick="Play_Cup_Game"
         app:layout_constraintBottom_toBottomOf="@+id/textView8"
@@ -115,15 +121,15 @@
 
     <TextView
         android:id="@+id/music_game_name_txt"
-        android:layout_width="181dp"
+        android:layout_width="240dp"
         android:layout_height="75dp"
         android:layout_marginTop="100dp"
         android:layout_marginBottom="500dp"
         android:background="@drawable/di_rect_rounded_text"
         android:elegantTextHeight="false"
+        android:gravity="center"
         android:onClick="Play_Pattern_Game"
         android:text="Match the Pattern "
-        android:gravity="center"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/black"

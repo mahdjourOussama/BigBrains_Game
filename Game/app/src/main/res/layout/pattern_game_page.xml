@@ -7,6 +7,19 @@
     android:background="@drawable/di_background">
 
     <TextView
+        android:id="@+id/lives_txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lives : "
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/music_game_gridLayout"
+        app:layout_constraintEnd_toStartOf="@+id/Score_txt"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_btn"
+        app:layout_constraintVertical_bias="0.84000003" />
+
+    <TextView
         android:id="@+id/player_Name_txt"
         android:layout_width="275dp"
         android:layout_height="60dp"
