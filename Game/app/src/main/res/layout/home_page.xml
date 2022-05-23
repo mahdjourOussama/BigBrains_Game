@@ -4,27 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/di_background">
+    android:background="@drawable/da_home_background">
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/card_game_score_btn"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginStart="5dp"
-        android:background="@drawable/di_rect_rounded_button"
-        android:onClick="Play_Card_Game"
-        app:layout_constraintBottom_toBottomOf="@+id/textView7"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toTopOf="@+id/textView7"
+        android:background="@drawable/da_rect_rounded_button"
+        android:onClick="OpenCardScoreBoard"
+        app:layout_constraintBottom_toBottomOf="@+id/card_game_name_btn"
+        app:layout_constraintStart_toEndOf="@+id/card_game_name_btn"
+        app:layout_constraintTop_toTopOf="@+id/card_game_name_btn"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_play_game" />
+        app:srcCompat="@drawable/ic_award" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/coin_game_name_btn"
         android:layout_width="0dp"
         android:layout_height="75dp"
-        android:layout_marginTop="75dp"
-        android:background="@drawable/di_rect_rounded_text"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/da_rect_rounded_text"
         android:gravity="center"
         android:onClick="Play_Cup_Game"
         android:text="Find the Coin"
@@ -32,69 +32,69 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/music_game_name_txt"
-        app:layout_constraintStart_toStartOf="@+id/music_game_name_txt"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintEnd_toEndOf="@+id/pattern_game_name_txt"
+        app:layout_constraintStart_toStartOf="@+id/pattern_game_name_txt"
+        app:layout_constraintTop_toBottomOf="@+id/card_game_name_btn" />
 
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/pattern_game_btn"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginEnd="5dp"
-        android:background="@drawable/di_rect_rounded_button"
+        android:background="@drawable/da_rect_rounded_button"
         android:gravity="center"
         android:onClick="Play_Pattern_Game"
-        app:layout_constraintBottom_toBottomOf="@+id/music_game_name_txt"
-        app:layout_constraintEnd_toStartOf="@+id/music_game_name_txt"
-        app:layout_constraintTop_toTopOf="@+id/music_game_name_txt"
+        app:layout_constraintBottom_toBottomOf="@+id/pattern_game_name_txt"
+        app:layout_constraintEnd_toStartOf="@+id/pattern_game_name_txt"
+        app:layout_constraintTop_toTopOf="@+id/pattern_game_name_txt"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/logo_pattern_game" />
 
     <ImageButton
-        android:id="@+id/usic_game_btn"
+        android:id="@+id/pattern_game_score_btn"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginStart="5dp"
-        android:background="@drawable/di_rect_rounded_button"
-        android:onClick="Play_Pattern_Game"
-        app:layout_constraintBottom_toBottomOf="@+id/music_game_name_txt"
-        app:layout_constraintStart_toEndOf="@+id/music_game_name_txt"
-        app:layout_constraintTop_toTopOf="@+id/music_game_name_txt"
+        android:background="@drawable/da_rect_rounded_button"
+        android:onClick="OpenPatternScoreBoard"
+        app:layout_constraintBottom_toBottomOf="@+id/pattern_game_name_txt"
+        app:layout_constraintStart_toEndOf="@+id/pattern_game_name_txt"
+        app:layout_constraintTop_toTopOf="@+id/pattern_game_name_txt"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_play_game" />
+        app:srcCompat="@drawable/ic_award" />
 
     <ImageView
-        android:id="@+id/imageView13"
+        android:id="@+id/card_game_btn"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginEnd="5dp"
-        android:background="@drawable/di_rect_rounded_button"
+        android:background="@drawable/da_rect_rounded_button"
         android:onClick="Play_Card_Game"
-        app:layout_constraintBottom_toBottomOf="@+id/textView7"
-        app:layout_constraintEnd_toStartOf="@+id/textView7"
-        app:layout_constraintTop_toTopOf="@+id/textView7"
+        app:layout_constraintBottom_toBottomOf="@+id/card_game_name_btn"
+        app:layout_constraintEnd_toStartOf="@+id/card_game_name_btn"
+        app:layout_constraintTop_toTopOf="@+id/card_game_name_btn"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/logo_matching_game" />
 
     <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/coin_game_btn"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginEnd="5dp"
-        android:background="@drawable/di_rect_rounded_button"
+        android:background="@drawable/da_rect_rounded_button"
         android:onClick="Play_Cup_Game"
-        app:layout_constraintBottom_toBottomOf="@+id/textView8"
-        app:layout_constraintEnd_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toTopOf="@+id/textView8"
+        app:layout_constraintBottom_toBottomOf="@+id/coin_game_name_btn"
+        app:layout_constraintEnd_toStartOf="@+id/coin_game_name_btn"
+        app:layout_constraintTop_toTopOf="@+id/coin_game_name_btn"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/logo_brain" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/card_game_name_btn"
         android:layout_width="0dp"
         android:layout_height="75dp"
-        android:layout_marginTop="75dp"
-        android:background="@drawable/di_rect_rounded_text"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/da_rect_rounded_text"
         android:gravity="center"
         android:onClick="Play_Card_Game"
         android:text="Match the Cards "
@@ -102,30 +102,30 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/music_game_name_txt" />
+        app:layout_constraintEnd_toEndOf="@+id/coin_game_name_btn"
+        app:layout_constraintStart_toStartOf="@+id/coin_game_name_btn"
+        app:layout_constraintTop_toBottomOf="@+id/pattern_game_name_txt" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/coing_game_score_btn"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginStart="5dp"
-        android:background="@drawable/di_rect_rounded_button"
-        android:onClick="Play_Cup_Game"
-        app:layout_constraintBottom_toBottomOf="@+id/textView8"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toTopOf="@+id/textView8"
+        android:background="@drawable/da_rect_rounded_button"
+        android:onClick="OpenCoinScoreBoard"
+        app:layout_constraintBottom_toBottomOf="@+id/coin_game_name_btn"
+        app:layout_constraintStart_toEndOf="@+id/coin_game_name_btn"
+        app:layout_constraintTop_toTopOf="@+id/coin_game_name_btn"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_play_game" />
+        app:srcCompat="@drawable/ic_award" />
 
     <TextView
-        android:id="@+id/music_game_name_txt"
+        android:id="@+id/pattern_game_name_txt"
         android:layout_width="240dp"
         android:layout_height="75dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="500dp"
-        android:background="@drawable/di_rect_rounded_text"
+        android:background="@drawable/da_rect_rounded_text"
         android:elegantTextHeight="false"
         android:gravity="center"
         android:onClick="Play_Pattern_Game"
@@ -137,22 +137,22 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Player_Name_txt"
+        app:layout_constraintTop_toBottomOf="@+id/Home_Player_Name_txt"
         app:layout_constraintVertical_bias="0.74" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group"
         android:layout_width="129dp"
         android:layout_height="13dp"
-        app:constraint_referenced_ids="music_game_name_txt"
+        app:constraint_referenced_ids="pattern_game_name_txt"
         tools:layout_editor_absoluteX="40dp"
         tools:layout_editor_absoluteY="48dp" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/Exit_btn"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:background="@drawable/di_rect_rounded_button"
+        android:background="@drawable/da_rect_rounded_button"
         android:onClick="Exit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -162,19 +162,19 @@
         android:id="@+id/imageButton4"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:background="@drawable/di_rect_rounded_button"
+        android:background="@drawable/da_rect_rounded_button"
         android:onClick="LogOut"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_logout" />
 
     <TextView
-        android:id="@+id/Player_Name_txt"
+        android:id="@+id/Home_Player_Name_txt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/di_player_name_menu"
-        android:text="Player Name"
+        android:background="@drawable/da_player_name_menu"
         android:gravity="center"
+        android:text="Player Name"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"

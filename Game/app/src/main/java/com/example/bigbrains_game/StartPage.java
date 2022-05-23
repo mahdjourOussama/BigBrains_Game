@@ -17,13 +17,12 @@ public class StartPage extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
         setContentView(R.layout.start_page);
+
     }
-    public void LogIN(View v){
-        Intent i = new Intent(this,LogIN.class);
+    public void Start(View v){
+
+        Intent i = new Intent(this,Getting_Started.class);
             startActivity(i);
-    }
-    public void SignIN(View v){
-        Intent i = new Intent(this,SignIN.class);
-        startActivity(i);
+
     }
 }

@@ -3,6 +3,7 @@ package com.example.bigbrains_game;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Looper;
+import android.os.health.TimerStat;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -24,6 +25,13 @@ public class Matching_Game extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.matching_game_page);
         setUp();
+
+        player =getIntent().getStringExtra("Player");
+        TextView t1=(TextView) findViewById(R.id.Card_Game_Player_Name_txt);
+        if(t1!=null) t1.setText(player);
+        else Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_LONG);
+
+        HSOps=new HighScoreOps(getApplicationContext());
     }
 
     //--------------------------Variable Declaration------------------------------------------------
@@ -33,57 +41,74 @@ public class Matching_Game extends AppCompatActivity {
         private Card hand [] = new Card[2] ;
         private int GameLevel=1,Score=0,Lives=3, timer=0;;
         private CountDownTimer Time;
+        private String player;
+        private  HighScoreOps HSOps;
+        private boolean GameActive=true;
     //----------------------------------------------------------------------------------------------
 
     //-----------------------Start Setters Methods--------------------------------------------------
     public void updateLevel(){
-        TextView t= (TextView) findViewById(R.id.level_txt2);
-        t.setText("Level : "+GameLevel);
+        TextView t= (TextView) findViewById(R.id.Card_Game_Level_txt);
+        t.setText("Level "+GameLevel);
     }
 
     public void updateLives(){
-        TextView t= (TextView) findViewById(R.id.lives_txt);
+        TextView t= (TextView) findViewById(R.id.Card_Game_Lives_txt);
         t.setText("Lives : "+Lives);
     }
 
-    public void setUpTimer(){
+    public void setUpTimer(int time){
         if(Time!=null){
             Time.cancel();
         }
-        timer=(120-(GameLevel-1)*15)*1000;
+        timer=time;
         if(timer>0) {
             Time = new CountDownTimer(timer, 1000) {
+                public long time_left=timer;
                 public void onFinish() {
-                    ((TextView) findViewById(R.id.time_txt)).setText("TimeOver");
+                    ((TextView) findViewById(R.id.Card_Game_Time_txt)).setText("TimeOver");
                     GameOver();
                 }
 
                 public void onTick(long milliSUntilFinish) {
-                    ((TextView) findViewById(R.id.time_txt)).setText(String.valueOf(timer/1000));
+                    ((TextView) findViewById(R.id.Card_Game_Time_txt)).setText(String.valueOf(timer/1000));
                     timer-=1000;
+                    time_left=milliSUntilFinish;
                 }
             }.start();
         }
     }
 
     public void updateScore(){
-        TextView t= (TextView) findViewById(R.id.Score_txt);
+        TextView t= (TextView) findViewById(R.id.Card_Game_Score_txt);
         t.setText(String.valueOf(Score));
+    }
+
+    public void pause(){
+        Time.cancel();
+        GameActive=false;
+        btnsActivation(GameActive);
+    }
+    public void resume(View v){
+        int time=GetTime();
+        setUpTimer(time);
+        GameActive=true;
+        btnsActivation(GameActive);
     }
     //----------------------------------------------------------------------------------------------
 
     //------------------------------Getter Methods--------------------------------------------------
     public int GetLevel(){
-        TextView t= (TextView) findViewById(R.id.level_txt2);
+        TextView t= (TextView) findViewById(R.id.Card_Game_Level_txt);
         return Integer.parseInt(((String) t.getText()).replace("Level : ",""));
     }
 
     public int GetLives(){
-        TextView t= (TextView) findViewById(R.id.lives_txt);
+        TextView t= (TextView) findViewById(R.id.Card_Game_Lives_txt);
         return Integer.parseInt(((String) t.getText()).replace("Lives : ",""));
     }
     public int GetScore(){
-        TextView t= (TextView) findViewById(R.id.Score_txt);
+        TextView t= (TextView) findViewById(R.id.Card_Game_Score_txt);
         return Integer.parseInt((String) t.getText());
     }
     //----------------------------------------------------------------------------------------------
@@ -100,6 +125,12 @@ public class Matching_Game extends AppCompatActivity {
             if(c.getBtnID()==btn) return c;
         }
         return  null;
+    }
+    public int GetTime(){
+        String timetxt=((TextView) findViewById(R.id.Card_Game_Time_txt)).getText().toString();
+        if(!timetxt.equalsIgnoreCase("timeover"))
+            return Integer.parseInt(timetxt);
+        else return 0;
     }
 
     //----------------------------------------------------------------------------------------------
@@ -177,7 +208,8 @@ public class Matching_Game extends AppCompatActivity {
         CardLayout.clear();
         Score =0;
         Lives =3;
-        setUpTimer();
+        //GameLevel=GetLevel();
+        setUpTimer((120-(GameLevel-1)*15)*1000);
         updateLevel();
         updateScore();
         updateLives();
@@ -300,18 +332,32 @@ public class Matching_Game extends AppCompatActivity {
     public void  GameOver(){
         Toast.makeText(getApplicationContext(),"Game Over",Toast.LENGTH_LONG).show();
         btnsActivation(false);
+
     }
+
     public void btnsActivation(boolean status){
         for (Card c :
                 CardLayout) {
             c.getBtnID().setEnabled(status);
         }
     }
-    public boolean Completed(){
+
+    public void saveScore(){
+        Score=GetScore();
+        HighScore score = new HighScore(player,"Card",Score);
+        if(HSOps.addHighScore(score)) Toast.makeText(getApplicationContext(),"saved",Toast.LENGTH_LONG);
+        else Toast.makeText(getApplicationContext(),"ERROR",Toast.LENGTH_LONG);
+    }
+
+    public boolean Completed() {
         for (Card c :
                 CardLayout) {
             if (!c.isActive()) return false;
         }
+        Score=GetScore()+GetTime();
+        updateScore();
+        saveScore();
+        pause();
         return true;
     }
     //----------------------------------------------------------------------------------------------

@@ -20,6 +20,8 @@ public class Pattern_Game extends AppCompatActivity {
     public List <Pattern_Btn> SequenceExpected = new ArrayList<Pattern_Btn>() ,
             SequenceEntered = new ArrayList<Pattern_Btn>();
     public int Score =0, GameLevel =2 ,Lives=3;
+    private String player;
+    private HighScoreOps HSOps;
     //-----------------------End Variable Declaration-----------------------------------------------
        @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,42 +31,46 @@ public class Pattern_Game extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
         setContentView(R.layout.pattern_game_page);
-
-        TextView level_txt= (TextView) findViewById(R.id.level_txt);
-        level_txt.setText("Level "+GameLevel);
+        HSOps=new HighScoreOps(getApplicationContext());
+        updateLevel();
         setUp();
+
+           player =getIntent().getStringExtra("Player");
+           TextView t1=(TextView) findViewById(R.id.Pattern_Game_Player_Name);
+           if(t1!=null)  t1.setText(player);
+           else Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_LONG);
     }
 
     //-----------------------Start Setters Methods--------------------------------------------------
     public void updateLevel(){
-        TextView t= (TextView) findViewById(R.id.level_txt);
+        TextView t= (TextView) findViewById(R.id.Pattern_Game_Level_txt);
         t.setText("Level "+GameLevel);
     }
 
     public void updateLives(){
-        TextView t= (TextView) findViewById(R.id.lives_txt2);
+        TextView t= (TextView) findViewById(R.id.Pattern_Game_Lives_txt);
         t.setText("Lives : "+Lives);
     }
 
     public void updateScore(){
-        TextView t= (TextView) findViewById(R.id.Score_txt);
+        TextView t= (TextView) findViewById(R.id.Pattern_Game_Score_txt);
         t.setText(String.valueOf(Score));
     }
     //-----------------------End Setters Methods----------------------------------------------------
 
     //-----------------------Start Getters Methods--------------------------------------------------
     public int GetLevel(){
-        TextView t= (TextView) findViewById(R.id.level_txt);
+        TextView t= (TextView) findViewById(R.id.Pattern_Game_Level_txt);
         return Integer.parseInt(((String) t.getText()).replace("Level ",""));
     }
 
     public int GetLives(){
-        TextView t= (TextView) findViewById(R.id.lives_txt2);
+        TextView t= (TextView) findViewById(R.id.Pattern_Game_Lives_txt);
         return Integer.parseInt(((String) t.getText()).replace("Lives : ",""));
     }
 
     public int GetScore(){
-        TextView t= (TextView) findViewById(R.id.Score_txt);
+        TextView t= (TextView) findViewById(R.id.Pattern_Game_Score_txt);
         return Integer.parseInt((String) t.getText());
     }
 
@@ -77,7 +83,15 @@ public class Pattern_Game extends AppCompatActivity {
 
     public  void GameOver(){
         GameStatus(false);
-    }
+        SaveScore();
+   }
+
+    public void SaveScore(){
+       Score=GetScore();
+       HighScore score = new HighScore(player,"Pattern",Score);
+       if(HSOps.addHighScore(score)) Toast.makeText(getApplicationContext(),"saved",Toast.LENGTH_LONG);
+       else Toast.makeText(getApplicationContext(),"ERROR",Toast.LENGTH_LONG);
+   }
 
     public void LevelUP(View v){
         GameLevel= GetLevel()+1;
@@ -134,7 +148,6 @@ public class Pattern_Game extends AppCompatActivity {
                 return true;
             }
 
-
         }
         return false;
     }
@@ -171,9 +184,7 @@ public class Pattern_Game extends AppCompatActivity {
 
     public void restartGame (View v){
         clearDisplay();
-        Score=0;
-        Lives=3;
-        setUp();
+        NewGame();
         GameStatus(true);
         CreateSequence();
     }
@@ -211,7 +222,7 @@ public class Pattern_Game extends AppCompatActivity {
 
     public void CreateSequence(){
         GameLevel = GetLevel();
-        setUp();
+        NewGame();
         for (int i =0;i<GameLevel;i++){
             AppendRandom();
         }
@@ -241,23 +252,27 @@ public class Pattern_Game extends AppCompatActivity {
      }
 
      public void setUp(){
-         SequenceExpected.clear();
-         SequenceEntered.clear();
          updateLives();
          updateLevel();
          updateScore();
-           for (int i=1;i<25;i++){
-               int btnID = getID("id","button"+i);
-               Pattern_Btn btn = new Pattern_Btn(i,(Button) findViewById(btnID));
-               SequenceExpected.add(btn);
-           }
+         NewGame();
+     }
+
+     public void NewGame(){
+         SequenceExpected.clear();
+         SequenceEntered.clear();
+
+         for (int i=1;i<25;i++){
+             int btnID = getID("id","button"+i);
+             Pattern_Btn btn = new Pattern_Btn(i,(Button) findViewById(btnID));
+             SequenceExpected.add(btn);
+         }
          for (int i=1;i<25;i++){
              int btnID = getID("id","button"+i);
              Pattern_Btn btn = new Pattern_Btn(i,(Button) findViewById(btnID));
              SequenceEntered.add(btn);
          }
      }
-
     //-----------------------End Game Logic Methods-------------------------------------------------
 
 

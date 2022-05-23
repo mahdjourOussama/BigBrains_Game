@@ -4,6 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2075" />
+        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/da_ellipse_1.xml" value="0.188" />
+        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/da_ellipse_2.xml" value="0.188" />
+        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/da_ellipse_3.xml" value="0.188" />
+        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/da_ellipse_4.xml" value="0.188" />
+        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/da_game_background.xml" value="0.188" />
+        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/da_home_background.xml" value="0.188" />
+        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/da_play_pallet_background.xml" value="0.188" />
+        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/da_player_name_menu.xml" value="0.188" />
+        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/da_rect_rounded_button.xml" value="0.188" />
+        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/da_rect_rounded_text.xml" value="0.188" />
         <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/di_background.xml" value="0.2075" />
         <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/di_ellipse_1.xml" value="0.2075" />
         <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/di_ellipse_2.xml" value="0.2075" />
@@ -19,6 +29,7 @@
         <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/ic_play_game.xml" value="0.2075" />
         <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/ic_rplayer_name.xml" value="0.2075" />
         <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/ic_up.xml" value="0.2075" />
+        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/logo_brain.xml" value="0.188" />
         <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/matching_game_card_0.xml" value="0.2075" />
         <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/matching_game_card_1.xml" value="0.2075" />
         <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/matching_game_card_10.xml" value="0.2075" />
@@ -48,14 +59,18 @@
         <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/drawable/rect_rounded_text.xml" value="0.2075" />
         <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/layout/card_game_page.xml" value="0.16417272338606242" />
-        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/layout/home_page.xml" value="0.5" />
+        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/layout/getting_started_page.xml" value="0.22" />
+        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/layout/home_page.xml" value="0.22" />
         <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/layout/login_page.xml" value="0.3333333333333333" />
-        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/layout/matching_game_page.xml" value="0.22" />
+        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/layout/matching_game_page.xml" value="0.14666666666666667" />
         <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/layout/music_game.xml" value="0.16417272338606242" />
         <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/layout/music_game_page.xml" value="0.3333333333333333" />
         <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/layout/pattern_game_page.xml" value="0.22" />
+        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/layout/score_board.xml" value="0.16417272338606242" />
         <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/layout/signin_page.xml" value="0.3333333333333333" />
-        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/layout/start_page.xml" value="0.3333333333333333" />
+        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/layout/start_page.xml" value="0.16666666666666666" />
+        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.188" />
+        <entry key="..\:/Study/IMSI/S4/Mobile/BigBrains Game/Game/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.188" />
       </map>
     </option>
   </component>
