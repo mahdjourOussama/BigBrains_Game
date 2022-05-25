@@ -310,11 +310,11 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:background="@drawable/da_rect_rounded_button"
-        android:onClick="restartGame"
+        android:onClick="restart"
         app:layout_constraintBottom_toBottomOf="@+id/Pattern_Game_Player_Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Pattern_Game_Player_Name"
-        app:srcCompat="@drawable/ic_add" />
+        app:srcCompat="@drawable/ic_replay" />
 
     <TextView
         android:id="@+id/Pattern_Game_Level_txt"
@@ -357,19 +357,21 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:background="@drawable/da_rect_rounded_button"
+        android:onClick="Exit"
         app:layout_constraintBottom_toBottomOf="@+id/Pattern_Game_Player_Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Pattern_Game_Player_Name"
-        app:srcCompat="@drawable/ic_pause" />
+        app:srcCompat="@drawable/ic_home" />
 
     <Button
         android:id="@+id/validate_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
-        android:background="@drawable/da_rect_rounded_button"
+        android:background="@drawable/da_rect_rounded_text"
         android:onClick="ValidateSequence"
         android:text="Validate"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/Pattern_Game_Level_txt"
         app:layout_constraintEnd_toEndOf="@+id/Pattern_Game_Level_txt"
         app:layout_constraintStart_toStartOf="@+id/Pattern_Game_Level_txt" />

@@ -44,6 +44,7 @@
         android:background="@drawable/da_rect_rounded_button"
         android:gravity="center"
         android:onClick="Play_Pattern_Game"
+        android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/pattern_game_name_txt"
         app:layout_constraintEnd_toStartOf="@+id/pattern_game_name_txt"
         app:layout_constraintTop_toTopOf="@+id/pattern_game_name_txt"
@@ -87,7 +88,7 @@
         app:layout_constraintEnd_toStartOf="@+id/coin_game_name_btn"
         app:layout_constraintTop_toTopOf="@+id/coin_game_name_btn"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/logo_brain" />
+        app:srcCompat="@drawable/logo_brain_1" />
 
     <TextView
         android:id="@+id/card_game_name_btn"

@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#BBD4F1"/>
-    <stroke android:color="#3782D8" android:width="1.5dp"/>
-    <corners android:radius="15dp"/>
-</shape>
+<vector android:autoMirrored="true" android:height="75dp"
+    android:viewportHeight="75" android:viewportWidth="75"
+    android:width="75dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#BAD7FD"
+        android:pathData="M20,0.5L55,0.5A19.5,19.5 0,0 1,74.5 20L74.5,55A19.5,19.5 0,0 1,55 74.5L20,74.5A19.5,19.5 0,0 1,0.5 55L0.5,20A19.5,19.5 0,0 1,20 0.5z"
+        android:strokeColor="#000000" android:strokeWidth="1"/>
+</vector>

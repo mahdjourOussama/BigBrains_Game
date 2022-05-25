@@ -16,6 +16,7 @@
         android:layout_marginEnd="5dp"
         android:background="@drawable/da_player_name_menu"
         android:gravity="center"
+        android:onClick="DisplayTwin"
         android:text="Player Name"
         android:textAlignment="center"
         android:textSize="30sp"
@@ -65,12 +66,13 @@
         android:id="@+id/replay_btn2"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginTop="3dp"
         android:background="@drawable/da_rect_rounded_button"
         android:onClick="newGame"
         app:layout_constraintBottom_toBottomOf="@+id/Card_Game_Player_Name_txt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Card_Game_Player_Name_txt"
-        app:srcCompat="@drawable/ic_add" />
+        app:srcCompat="@drawable/ic_replay" />
 
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/card_game_gridLayout"
@@ -348,12 +350,13 @@
         android:id="@+id/imageButton5"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginTop="3dp"
         android:background="@drawable/da_rect_rounded_button"
-        android:onClick="resume"
+        android:onClick="Exit"
         app:layout_constraintBottom_toBottomOf="@+id/Card_Game_Player_Name_txt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Card_Game_Player_Name_txt"
-        app:srcCompat="@drawable/ic_pause" />
+        app:srcCompat="@drawable/ic_home" />
 
     <TextView
         android:id="@+id/Card_Game_Time_txt"
