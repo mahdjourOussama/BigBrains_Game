@@ -74,8 +74,8 @@
 
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/card_game_gridLayout"
-        android:layout_width="400dp"
-        android:layout_height="600dp"
+        android:layout_width="403dp"
+        android:layout_height="598dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="120dp"
         android:layout_marginEnd="5dp"

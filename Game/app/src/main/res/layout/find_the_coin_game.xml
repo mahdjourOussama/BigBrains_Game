@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/da_game_background">
+
+
+    <TextView
+        android:id="@+id/Pattern_Game_Player_Name"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@drawable/da_player_name_menu"
+        android:gravity="center"
+        android:text="Player Name"
+        android:textAlignment="center"
+        android:textSize="30sp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="66dp" />
+
+    <ImageButton
+        android:id="@+id/pause_btn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="2dp"
+        android:background="@drawable/da_rect_rounded_button"
+        app:layout_constraintBottom_toBottomOf="@+id/Pattern_Game_Player_Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Pattern_Game_Player_Name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_pause" />
+
+    <ImageButton
+        android:id="@+id/level_up"
+        android:layout_width="65dp"
+        android:layout_height="0dp"
+
+        android:layout_marginStart="5dp"
+        android:background="@drawable/da_rect_rounded_button"
+        app:layout_constraintBottom_toBottomOf="@+id/level_id"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/level_id"
+        app:layout_constraintTop_toTopOf="@+id/go_button"
+        app:srcCompat="@drawable/ic_up" />
+
+    <ImageButton
+        android:id="@+id/level_down"
+        android:layout_width="65dp"
+        android:layout_height="0dp"
+
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/da_rect_rounded_button"
+        app:layout_constraintBottom_toBottomOf="@+id/level_id"
+        app:layout_constraintEnd_toStartOf="@+id/level_id"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/gridLayout"
+        app:layout_constraintTop_toTopOf="@+id/go_button"
+        app:srcCompat="@drawable/ic_down" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="27dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="724dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="27dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="59dp" />
+
+    <TextView
+        android:id="@+id/level_id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="Level 1"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/go_button"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/go_button" />
+
+    <Button
+        android:id="@+id/go_button"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/da_rect_rounded_button"
+        android:text="GO"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/purple_700"
+
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/level_id"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <TextView
+        android:id="@+id/score_id"
+        android:layout_width="82dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="20dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Pattern_Game_Player_Name" />
+
+    <ImageView
+        android:id="@+id/follow_card_id"
+        android:layout_width="80dp"
+        android:layout_height="143dp"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/score_id"
+        app:layout_constraintVertical_bias="0.13"
+        app:srcCompat="@drawable/coin_game_card_from_behind" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="360dp"
+
+        android:layout_height="223dp"
+
+        android:background="@drawable/da_play_pallet_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score_id"
+        app:layout_constraintVertical_bias="0.53">
+
+
+        <ImageView
+            android:id="@+id/left_card_id"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            app:layout_column="0"
+            app:layout_row="2"
+            app:srcCompat="@drawable/coin_game_card_from_behind" />
+
+        <ImageView
+            android:id="@+id/middle_card_id"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            app:layout_column="1"
+            app:layout_row="2"
+            app:srcCompat="@drawable/coin_game_card_from_behind" />
+
+        <ImageView
+            android:id="@+id/right_card_id"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            app:layout_column="3"
+            app:layout_row="2"
+            app:srcCompat="@drawable/coin_game_card_from_behind" />
+    </androidx.gridlayout.widget.GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
