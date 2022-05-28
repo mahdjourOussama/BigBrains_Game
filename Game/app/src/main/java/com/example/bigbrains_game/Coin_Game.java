@@ -49,7 +49,12 @@ public class Coin_Game extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
         setContentView(R.layout.find_the_coin_game);
-
+        //--------------set Up the player Name------------------------------------------------------
+        player =getIntent().getStringExtra("Player");
+        TextView t1=(TextView) findViewById(R.id.Coin_Game_Player_Name);
+        if(t1!=null)  t1.setText(player);
+        else Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_LONG);
+        //------------------------------------------------------------------------------------------
                                             /*                  Find View                   */
 
         follow_card_id = (ImageView) findViewById(R.id.follow_card_id);

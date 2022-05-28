@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/Pattern_Game_Player_Name"
+        android:id="@+id/Coin_Game_Player_Name"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:background="@drawable/da_player_name_menu"
@@ -17,8 +17,8 @@
         android:textAlignment="center"
         android:textSize="30sp"
 
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="66dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/restart_button"
@@ -107,7 +107,7 @@
         android:id="@+id/go_button"
         android:layout_width="185dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/da_rect_rounded_button"
+        android:background="@drawable/da_rect_rounded_text"
         android:text="GO"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/purple_700"
@@ -127,9 +127,9 @@
         android:textColor="@color/black"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Pattern_Game_Player_Name" />
+        app:layout_constraintTop_toBottomOf="@+id/Coin_Game_Player_Name" />
 
     <ImageView
         android:id="@+id/follow_card_id"

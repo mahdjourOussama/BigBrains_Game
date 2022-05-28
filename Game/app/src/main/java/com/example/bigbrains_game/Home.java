@@ -33,7 +33,7 @@ public class Home extends AppCompatActivity {
         startActivity(i);
     }
     public void Play_Cup_Game(View v){
-        Intent i = new Intent(this, Pattern_Game.class);
+        Intent i = new Intent(this, Coin_Game.class);
         i.putExtra("Player",player);
         startActivity(i);
     }

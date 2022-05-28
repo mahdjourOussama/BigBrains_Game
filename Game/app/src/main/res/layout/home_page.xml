@@ -28,7 +28,7 @@
         android:background="@drawable/da_rect_rounded_text"
         android:gravity="center"
         android:onClick="Play_Cup_Game"
-        android:text="Find the Coin"
+        android:text="Find the Card"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/black"
