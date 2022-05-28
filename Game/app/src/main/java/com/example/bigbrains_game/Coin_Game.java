@@ -27,6 +27,7 @@ public class Coin_Game extends AppCompatActivity {
     ImageView follow_card_id, left_card_id, middle_card_id, right_card_id;
     TextView score_id;
     ImageButton level_up, level_down;
+    ImageButton restart_button;
 
     ArrayList<Integer> cards;
     ArrayList<Integer> card_image;
@@ -63,6 +64,8 @@ public class Coin_Game extends AppCompatActivity {
 
         level_up = (ImageButton) findViewById(R.id.level_up);
         level_down = (ImageButton) findViewById(R.id.level_down);
+
+        restart_button = (ImageButton) findViewById(R.id.restart_button);
 
                                             /*              Card List               */
 
@@ -356,6 +359,13 @@ public class Coin_Game extends AppCompatActivity {
             }
         });
 
+        restart_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                restart();
+            }
+        });
+
     }
 
                                                 /*                  End Of OnCreate                 */
@@ -438,6 +448,11 @@ public class Coin_Game extends AppCompatActivity {
     public void gameOver () { //it needs an interface to restart or exit the game and relate this method to that interface
         Toast.makeText(getApplicationContext(), "Game Over !", Toast.LENGTH_LONG).show();
         SaveScore();
+    }
+
+    public void restart(){
+        current_level=1;
+        updateLevel();
     }
 
 }
