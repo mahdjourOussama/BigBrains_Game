@@ -40,7 +40,7 @@ public class Matching_Game extends AppCompatActivity {
         private List<int []> PlacesUnavailable = new ArrayList<int [] >();
         private Button FirstMove =null;
         private Card hand [] = new Card[2] ;
-        private int GameLevel=1,Score=0,Lives=3, timer=0;;
+        private int GameLevel=1,Score=0,Lives=9, timer=0;;
         private CountDownTimer Time;
         private String player;
         private  HighScoreOps HSOps;
@@ -143,7 +143,9 @@ public class Matching_Game extends AppCompatActivity {
     public void LevelUP(View v){
         if(GameLevel<7){
             GameLevel = GetLevel() + 1;
+            Lives =10-GameLevel;
             updateLevel();
+            updateLives();
             newGame(v);
         }else{
             Toast.makeText(getApplicationContext(),"Maximal Level",Toast.LENGTH_LONG).show();
@@ -154,6 +156,8 @@ public class Matching_Game extends AppCompatActivity {
         if(GameLevel>0){
             GameLevel = GetLevel() - 1;
             updateLevel();
+            Lives=10-GameLevel;
+            updateLives();
             newGame(v);
         }else{
             Toast.makeText(getApplicationContext(),"Minimal Level",Toast.LENGTH_LONG).show();
@@ -208,7 +212,7 @@ public class Matching_Game extends AppCompatActivity {
     public void setUp(){
         CardLayout.clear();
         Score =0;
-        Lives =3;
+        Lives=10-GameLevel;
         //GameLevel=GetLevel();
         setUpTimer((120-(GameLevel-1)*15)*1000+5000);
         updateLevel();
@@ -334,7 +338,7 @@ public class Matching_Game extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"Game Over",Toast.LENGTH_LONG).show();
         saveScore();
         btnsActivation(false);
-
+        Time.cancel();
     }
 
     public void btnsActivation(boolean status){

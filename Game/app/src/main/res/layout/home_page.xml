@@ -14,6 +14,7 @@
         android:background="@drawable/da_rect_rounded_button"
         android:onClick="OpenCardScoreBoard"
         app:layout_constraintBottom_toBottomOf="@+id/card_game_name_btn"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/card_game_name_btn"
         app:layout_constraintTop_toTopOf="@+id/card_game_name_btn"
         app:layout_constraintVertical_bias="1.0"
@@ -47,6 +48,7 @@
         android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/pattern_game_name_txt"
         app:layout_constraintEnd_toStartOf="@+id/pattern_game_name_txt"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/pattern_game_name_txt"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/logo_pattern_game" />
@@ -59,6 +61,7 @@
         android:background="@drawable/da_rect_rounded_button"
         android:onClick="OpenPatternScoreBoard"
         app:layout_constraintBottom_toBottomOf="@+id/pattern_game_name_txt"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/pattern_game_name_txt"
         app:layout_constraintTop_toTopOf="@+id/pattern_game_name_txt"
         app:layout_constraintVertical_bias="1.0"
@@ -73,6 +76,7 @@
         android:onClick="Play_Card_Game"
         app:layout_constraintBottom_toBottomOf="@+id/card_game_name_btn"
         app:layout_constraintEnd_toStartOf="@+id/card_game_name_btn"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/card_game_name_btn"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/logo_matching_game" />
@@ -86,6 +90,7 @@
         android:onClick="Play_Cup_Game"
         app:layout_constraintBottom_toBottomOf="@+id/coin_game_name_btn"
         app:layout_constraintEnd_toStartOf="@+id/coin_game_name_btn"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/coin_game_name_btn"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/logo_brain_1" />
@@ -115,6 +120,7 @@
         android:background="@drawable/da_rect_rounded_button"
         android:onClick="OpenCoinScoreBoard"
         app:layout_constraintBottom_toBottomOf="@+id/coin_game_name_btn"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/coin_game_name_btn"
         app:layout_constraintTop_toTopOf="@+id/coin_game_name_btn"
         app:layout_constraintVertical_bias="1.0"
