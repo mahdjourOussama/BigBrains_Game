@@ -31,6 +31,7 @@ public class Matching_Game extends AppCompatActivity {
         if(t1!=null) t1.setText(player);
         else Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_LONG);
 
+        ShuffleCards();
         HSOps=new HighScoreOps(getApplicationContext());
     }
 
@@ -39,17 +40,16 @@ public class Matching_Game extends AppCompatActivity {
         private List<int []> PlacesUnavailable = new ArrayList<int [] >();
         private Button FirstMove =null;
         private Card hand [] = new Card[2] ;
-        private int GameLevel=1,Score=0,Lives=3, timer=0;;
+        private int GameLevel=1,Score=0,Lives=9, timer=0;;
         private CountDownTimer Time;
         private String player;
         private  HighScoreOps HSOps;
-        private boolean GameActive=true;
     //----------------------------------------------------------------------------------------------
 
     //-----------------------Start Setters Methods--------------------------------------------------
     public void updateLevel(){
         TextView t= (TextView) findViewById(R.id.Card_Game_Level_txt);
-        t.setText("Level "+GameLevel);
+        t.setText("Level : "+GameLevel);
     }
 
     public void updateLives(){
@@ -66,8 +66,12 @@ public class Matching_Game extends AppCompatActivity {
             Time = new CountDownTimer(timer, 1000) {
                 public long time_left=timer;
                 public void onFinish() {
-                    ((TextView) findViewById(R.id.Card_Game_Time_txt)).setText("TimeOver");
-                    GameOver();
+                    if(time_left==0){
+                        ((TextView) findViewById(R.id.Card_Game_Time_txt)).setText("TimeOver");
+                        GameOver();
+                    }else{
+                        ((TextView) findViewById(R.id.Card_Game_Time_txt)).setText(""+time_left);
+                    }
                 }
 
                 public void onTick(long milliSUntilFinish) {
@@ -86,14 +90,6 @@ public class Matching_Game extends AppCompatActivity {
 
     public void pause(){
         Time.cancel();
-        GameActive=false;
-        btnsActivation(GameActive);
-    }
-    public void resume(View v){
-        int time=GetTime();
-        setUpTimer(time);
-        GameActive=true;
-        btnsActivation(GameActive);
     }
     //----------------------------------------------------------------------------------------------
 
@@ -147,7 +143,9 @@ public class Matching_Game extends AppCompatActivity {
     public void LevelUP(View v){
         if(GameLevel<7){
             GameLevel = GetLevel() + 1;
+            Lives =10-GameLevel;
             updateLevel();
+            updateLives();
             newGame(v);
         }else{
             Toast.makeText(getApplicationContext(),"Maximal Level",Toast.LENGTH_LONG).show();
@@ -158,10 +156,17 @@ public class Matching_Game extends AppCompatActivity {
         if(GameLevel>0){
             GameLevel = GetLevel() - 1;
             updateLevel();
+            Lives=10-GameLevel;
+            updateLives();
             newGame(v);
         }else{
             Toast.makeText(getApplicationContext(),"Minimal Level",Toast.LENGTH_LONG).show();
         }
+    }
+
+    public  void Exit(View v){
+        saveScore();
+        finish();
     }
 
     public void ShuffleCards(){
@@ -207,9 +212,9 @@ public class Matching_Game extends AppCompatActivity {
     public void setUp(){
         CardLayout.clear();
         Score =0;
-        Lives =3;
+        Lives=10-GameLevel;
         //GameLevel=GetLevel();
-        setUpTimer((120-(GameLevel-1)*15)*1000);
+        setUpTimer((120-(GameLevel-1)*15)*1000+5000);
         updateLevel();
         updateScore();
         updateLives();
@@ -230,42 +235,42 @@ public class Matching_Game extends AppCompatActivity {
 
     }
 
-
-
-    public synchronized void FlashBtn(Card c){
+    public synchronized void FlashBtn(Card c,int sec){
         Button btn = c.getBtnID();
         int colorID =c.getImage();
         btn.setBackgroundResource(colorID);
-        btn.setText(""+c.getImageID());
         new android.os.Handler(Looper.getMainLooper()).postDelayed(
                 new Runnable() {
                     public void run() {
                         btn.setBackgroundResource(R.drawable.matching_game_card_0);
                     }
                 },
-                3000);
+                1000*sec);
 
     }
 
     public void DisplayCards(){
         for (Card c :
                 CardLayout) {
-            FlashBtn(c);
+            FlashBtn(c,5);
         }
     }
 
     public void DisplayTwin(View v){
-        Button btn = findViewById(v.getId());
-        Card selected= CardLayout.get(0);
-        for (Card c :
-                CardLayout) {
-            if(c.getBtnID()==btn) {
-                selected = c;
-                break;
+        Button btn = FirstMove;
+        if(btn!=null){
+            Card selected = CardLayout.get(0);
+            for (Card c :
+                    CardLayout) {
+                if (c.getBtnID() == btn) {
+                    selected = c;
+                    break;
+                }
             }
+            FlashBtn(selected, 2);
+            FlashBtn(selected.getTwin(), 2);
+            FirstMove = null;
         }
-        FlashBtn(selected);
-        FlashBtn(selected.getTwin());
     }
 
     public void CalculateScore(){
@@ -311,8 +316,8 @@ public class Matching_Game extends AppCompatActivity {
                         if(Lives>=1){
 
                             Lives=GetLives()-1;
-                            FlashBtn(card1);
-                            FlashBtn(card2);
+                            FlashBtn(card1,2);
+                            FlashBtn(card2,2);
                             updateLives();
 
                         }else{
@@ -331,8 +336,9 @@ public class Matching_Game extends AppCompatActivity {
 
     public void  GameOver(){
         Toast.makeText(getApplicationContext(),"Game Over",Toast.LENGTH_LONG).show();
+        saveScore();
         btnsActivation(false);
-
+        Time.cancel();
     }
 
     public void btnsActivation(boolean status){

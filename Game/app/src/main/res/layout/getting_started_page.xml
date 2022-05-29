@@ -8,11 +8,9 @@
 
     <Button
         android:id="@+id/Start_btn"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/da_rect_rounded_button"
         android:onClick="SignIn"
         android:padding="15dp"
@@ -21,7 +19,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="@+id/name_txt"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="@+id/name_txt"
         app:layout_constraintTop_toBottomOf="@+id/name_txt"
         app:layout_constraintVertical_bias="0.110000014" />
@@ -31,15 +29,14 @@
         android:layout_width="325dp"
         android:layout_height="325dp"
         android:layout_marginStart="106dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="106dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo_start_page" />
+        app:srcCompat="@drawable/logo_brain_3" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -61,6 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="-30dp"
         android:layout_marginEnd="-5dp"
+        android:layout_marginBottom="-60dp"
         app:layout_constraintBottom_toBottomOf="@+id/Logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.527"
@@ -96,7 +94,7 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="55dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/da_rect_rounded_text"
         android:ems="10"

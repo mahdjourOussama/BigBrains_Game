@@ -29,7 +29,7 @@ public class Score_Board extends AppCompatActivity {
 
     public void fill(){
         String gameName =getIntent().getStringExtra("Game");
-        ((TextView) findViewById(R.id.Game_Name_txt)).setText(gameName+" Game");
+        ((TextView) findViewById(R.id.Game_Name_txt)).setText(gameName+" Game ScoreBoard");
 
         ListView list=(ListView)findViewById(R.id.Score_List);
 

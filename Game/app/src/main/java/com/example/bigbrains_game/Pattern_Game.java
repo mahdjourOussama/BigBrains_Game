@@ -22,6 +22,7 @@ public class Pattern_Game extends AppCompatActivity {
     public int Score =0, GameLevel =2 ,Lives=3;
     private String player;
     private HighScoreOps HSOps;
+    private boolean GameEnded=false;
     //-----------------------End Variable Declaration-----------------------------------------------
        @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,8 @@ public class Pattern_Game extends AppCompatActivity {
            TextView t1=(TextView) findViewById(R.id.Pattern_Game_Player_Name);
            if(t1!=null)  t1.setText(player);
            else Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_LONG);
+
+           startGame();
     }
 
     //-----------------------Start Setters Methods--------------------------------------------------
@@ -86,6 +89,13 @@ public class Pattern_Game extends AppCompatActivity {
         SaveScore();
    }
 
+   public void restSequence(){
+       for (Pattern_Btn btn :
+               SequenceEntered) {
+           btn.setColorID(0);
+       }
+   }
+
     public void SaveScore(){
        Score=GetScore();
        HighScore score = new HighScore(player,"Pattern",Score);
@@ -96,12 +106,14 @@ public class Pattern_Game extends AppCompatActivity {
     public void LevelUP(View v){
         GameLevel= GetLevel()+1;
         updateLevel();
+        startGame();
     }
 
     public void LevelDOWN(View v){
-        if(GameLevel>0){
+        if(GameLevel>1){
             GameLevel = GetLevel() - 1;
             updateLevel();
+            startGame();
         }else{
             Toast.makeText(getApplicationContext(),"Minimal Level",Toast.LENGTH_LONG).show();
         }
@@ -121,9 +133,12 @@ public class Pattern_Game extends AppCompatActivity {
         if(!exist) {
             SequenceExpected.get(randomNumber).setColorID(randomColor);
         }
-        else if(SequenceExpected.size()<24) AppendRandom();
     }
 
+    public  void Exit(View v){
+           SaveScore();
+           finish();
+    }
     public boolean GameSystemTest(){
         for (int i = 0; i< SequenceEntered.size(); i++){
             if(SequenceExpected.get(i).getBtn() ==SequenceEntered.get(i).getBtn()
@@ -131,6 +146,7 @@ public class Pattern_Game extends AppCompatActivity {
 
                 SequenceEntered.get(i).getBtn().setBackgroundResource(R.drawable.pattern_game_btn_error);
                 SequenceEntered.get(i).getBtn().setText("Error");
+                clearEntredSeq();
                 if(Lives <1){
                     GameOver();
                     return true;
@@ -171,7 +187,6 @@ public class Pattern_Game extends AppCompatActivity {
     public synchronized void FlashBtn(@NonNull Button btn,int colorID){
 
         btn.setBackgroundResource(colorID);
-
         new android.os.Handler(Looper.getMainLooper()).postDelayed(
                 new Runnable() {
                     public void run() {
@@ -182,9 +197,15 @@ public class Pattern_Game extends AppCompatActivity {
 
     }
 
-    public void restartGame (View v){
+
+    public void restart(View v){
+           Score =0;
+           updateScore();
+           startGame();
+    }
+    public void startGame(){
         clearDisplay();
-        NewGame();
+        reset();
         GameStatus(true);
         CreateSequence();
     }
@@ -220,9 +241,16 @@ public class Pattern_Game extends AppCompatActivity {
 
     }
 
+    public void clearEntredSeq(){
+        for (Pattern_Btn btn :
+                SequenceEntered) {
+            btn.setColorID(0);
+        }
+    }
+
     public void CreateSequence(){
         GameLevel = GetLevel();
-        NewGame();
+        reset();
         for (int i =0;i<GameLevel;i++){
             AppendRandom();
         }
@@ -240,7 +268,7 @@ public class Pattern_Game extends AppCompatActivity {
              CalculateScore();
              Toast.makeText(getApplicationContext(),"Congratulation",Toast.LENGTH_LONG).show();
              updateScore();
-             GameStatus(false);
+             LevelUP(v);
          }
      }
 
@@ -256,6 +284,13 @@ public class Pattern_Game extends AppCompatActivity {
          updateLevel();
          updateScore();
          NewGame();
+     }
+
+     public void reset(){
+         for (int i = 0; i < 24; i++) {
+             SequenceEntered.get(i).setColorID(0);
+             SequenceExpected.get(i).setColorID(0);
+         }
      }
 
      public void NewGame(){

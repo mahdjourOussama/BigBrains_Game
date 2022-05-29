@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/</item>
+        <item>@font/caveat</item>
+        <item>@font/caveat_brush</item>
+        <item>@font/cookie</item>
+        <item>@font/lobster_two</item>
+        <item>@font/macondo</item>
+        <item>@font/swanky_and_moo_moo</item>
+    </array>
+</resources>
